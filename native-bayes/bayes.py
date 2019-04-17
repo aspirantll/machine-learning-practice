@@ -32,7 +32,6 @@ class Bayes(object):
 
         for vocab_vec in  vocab_vecs:
             probs = [sum(array(vocab_vec)*self.con_probabilitys[i])+log(self.cate_probabilitys[i]) for i in range(self.class_categories)]
-            print(probs)
             predict_hats.append(probs.index(max(probs)))
 
         return predict_hats
